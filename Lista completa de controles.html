@@ -1,0 +1,697 @@
+<!--:pt--><h2>Controles para utilizar em qualquer página</h2>
+
+<p>Os controles que serão listados abaixo são compatíveis com quase todas as <strong>páginas</strong>. Alguns deles não funcionam em algumas páginas.</p>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:middle"><code>&lt;vtex.cmc:AmountItemsInCart /&gt;</code></td>
+<td><strong>Resumo do Carinho</strong><br />
+Exibe os totais de produtos inseridos no carrinho de compras. Ideal para ser usado no Header das lojas.<br />
+<a href="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-amount-1.png"><img src="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-amount-1.png" alt="controle-amount-1" width="251" height="71" class="alignnone size-full wp-image-44254" /></a><br />
+<a href="http://vtex.com.br/help/o-controle-de-resumo-do-carrinho-vtex-cmcamountitemsincart/" title="O controle de resumo do carrinho &lt;vtex.cmc:AmountItemsInCart /&gt;">ver artigo completo</a>
+
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle"><code>&lt;vtex.cmc:breadCrumb /&gt;</code></td>
+<td><strong>Bread Crumb</strong>
+Funciona apenas nas páginas de Produto, Departamento, Categoria e Busca.</td>
+</tr>
+<tr>
+<td style="vertical-align:middle"><code>&lt;vtex.cmc:fullTextSearchBox/&gt;</code></td>
+   <td>
+      <strong>Busca Total</strong><br />
+<a href="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-busca.png"><img src="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-busca-300x16.png" alt="controle-busca" width="300" height="16" class="alignnone size-medium wp-image-44143" /></a><br />
+      <a href="http://vtex.com.br/help/o-controle-de-busca-vtex-cmcfulltextsearchbox/" title="O Controle de Busca &lt;vtex.cmc:fullTextSearchBox /&gt;" />ver artigo completo</a>
+   </td>
+</tr>
+<tr>
+<td style="vertical-align:middle"><code>&lt;vtex.cmc:navigationHistory/&gt;</code></td>
+<td><strong>Histórico de Navegação</strong>
+Exibe as últimas busca e últimos produtos vistos. Para ativar a funcionalidade de últimos produtos vistos, necessário adicionar esse controle na página de produto.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:storeFlagLocator/&gt;</code></td>
+<td><strong>Localizador de Lojas</strong>
+Requisitos: Cadastrar no ADMIN as Lojas Físicas e seus endereços. Além disso, pesquisar cada endereço no Google Maps e preencher os devidos campos.
+Necessário configurar no banco de conexão da Loja a chave do Google Maps adquirida pela Loja.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:welcomeMessage/&gt;</code></td>
+<td><strong>Mensagem de Boas Vindas</strong>
+No admin, na aba Configurações &gt; Textos, é possível alterar a frase de Bem vindo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:metaTags/&gt;</code></td>
+<td><strong>META TAGs</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:departmentLinks/&gt;</code></td>
+<td><strong>Links de Departamentos</strong>
+Apresenta o primeiro nível de categorias criado no Admin. Necessário configurar no Departamento que o mesmo será apresentado no Menu Superior.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:departmentNavigator/&gt;</code></td>
+<td><strong>Menu de Departamentos</strong>
+Os Departamentos e Categorias são apresentadas de acordo com o cadastro dos 1º e 2º Níveis. Para exibir o Link "Lista Completa", também é necessário uma configuração nas Categorias Ativas do Departamento.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:newsletterOptIn/&gt;</code></td>
+<td><strong>Newsletter</strong>
+Formulário para cadastro de uma lista de nome e e-mail cadastrado pelos Clientes.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Buscas</strong>
+É necessário inserir o controle de Histórico de Navegação na página de Busca para que o controle de Tag Cloud seja populada na Home.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesCategoriesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Categorias</strong>
+É necessário que o cliente navegue pelas páginas dos produtos das diversas categorias para que a Categoria seja contabilizada.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchTitle /&gt;</code></td>
+<td><strong>Título da Página</strong>
+Exibe o título das páginas de Departamento, Categoria e Busca.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductQueryStringReferenceShelf/&gt;</code></td>
+<td><strong>Produtos em destaque (Landing Page)</strong>
+Atributos da Tag:
+<strong>layout:</strong> ID do template da prateleira. Atributo obrigatório.
+<strong>itemCount:</strong> Quantidade de itens a serem apresentados. Atributo obrigatório.
+<strong>columnCount:</strong> Quantidade de colunas. Atributo obrigatório.
+<strong>showUnavailable:</strong> Quando o atributo está setado para true significa que deve exibir os produtos esgotados.
+<strong>selectionMode="batch-buy":</strong> Atributo não obrigatório que permite a realização de compra em lote.
+<strong>isTrackable:</strong> Quando o atributo está setado para true significa que este controle deve ser rastreável.
+<strong>InternalCampaign:</strong> Nome da campanha interna.
+<strong>InternalPart:</strong> Nome da view part interna.
+<strong>Exemplo de uso:</strong>
+<code>&lt;vtex.cmc:ProductQueryStringReferenceShelf layout="e2ed81f5-6241-4418-a47b-018d7482fcf0" itemCount="3" columnCount="3" showUnavailable="true" isTrackable="true" InternalCampaign="Destaque landing" InternalPart="Prateleira destaque" /&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productQuickView/&gt;</code></td>
+<td><strong>Espiar (QuickView)</strong>
+Controle deve ser adicionado antes do fechamento da tag <code>&lt;/body&gt;</code> do template de página de <strong>Quickview</strong>. Ele é fundamental para o carregamento dos arquivos necessários da página.</td>
+</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h2>Controles para Página de Produto</h2>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;vtex.cmc:productPageTitle /&gt;</code></td>
+<td><strong>Título do Produto</strong>
+<code>&lt;title&gt;&lt;vtex.cmc:productPageTitle /&gt;&lt;/title&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productName/&gt;</code></td>
+<td><strong>Nome do Produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:brandName/&gt;</code></td>
+<td><strong>Marca do produto com link</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductImage/&gt;</code></td>
+<td><strong>Imagem principal do produto com thumbs</strong>
+Na versão SmartCheckout, para ativar o zoom, é necessário adicionar o atributo "zoom" na tag
+Ex.:
+<code>&lt;vtex.cmc:ProductImage zoom="on"/&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productReference/&gt;</code></td>
+<td><strong>Cód. de Referência do Produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuReference/&gt;</code></td>
+<td><strong>Cód. de Referência do Sku</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuPrice/&gt;</code></td>
+<td>Preço <strong>de</strong>, Preço <strong>por</strong>, <strong>Parcelamento</strong> e <strong>Economia de</strong>
+ADMIN: Depende do cadastro dos preços de um determinado SKU. Por exemplo, se o preço novo cadastrado for menor do que o antigo, o "de/para" é mostrado, bem como a "economia de".</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitSelection /&gt;</code></td>
+<td><strong>Seleção de SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuRichSelection changeImage="1" /&gt;</code></td>
+<td><strong>Seleção de SKU Checkbox</strong>
+Força o modo de seleção para o tipo radio</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuSelection /&gt;</code></td>
+<td><strong>Seleção de SKUs</strong>
+Não força o modo de seleção, respeitando a configuração no admin (radio, checkbox, combo, etc.).
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:OtherPaymentMethod/&gt;</code></td>
+<td><strong>Ver outras formas de pagamento</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:Delivery/&gt;</code></td>
+<td><strong>Disponibilidade</strong>
+Tempo com cidade e estado default</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:shippingValue/&gt;</code></td>
+<td><strong>Calcular valor do frete e prazo de entrega</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitRewardValue/&gt;</code></td>
+<td><strong>Valor para Fidelidade</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitService/&gt;</code></td>
+<td><strong>Serviços do SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:BuyTogether/&gt;</code></td>
+<td><strong>Compre-Junto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductDescription/&gt;</code></td>
+<td><strong>Descrição do produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productDescriptionShort /&gt;</code></td>
+<td><strong>Descrição Curta do Produto</strong>
+OBS: Campo "Nome Complemento" do formulário de cadastro do produto</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productSpecification/&gt;</code></td>
+<td><strong>Especificação do produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitMeasures/&gt;</code></td>
+<td><strong>Dimensões reais do SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductTag/&gt;</code></td>
+<td><strong>Tags associadas</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:PageSearch/&gt;</code></td>
+<td><strong>Busca dentro da página de produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:BuyButton/&gt;</code></td>
+<td><strong>Botão Comprar</strong>
+Se o SKU estiver esgotado, exibirá o Avise-me se o mesmo estiver configurado no admin</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:evaluationRate/&gt;</code></td>
+<td><strong>Avaliações dos consumidores (estrelas)</strong>
+Retorna o total de classificações feitas pelos usuários</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:UserReview/&gt;</code></td>
+<td><strong>Avaliações e comentários</strong>
+Adiciona opção de avaliar e resultado das avaliações, formulário para comentar e visualização de comentários</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:giftListInsertSku/&gt;</code></td>
+<td><strong>Adicionar produto a uma lista</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:referAFriend/&gt;</code></td>
+<td><strong>Indique um amigo</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:discountHightLight/&gt;</code></td>
+<td><strong>Flags Destaques de Promoções</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:SellerOptions /&gt;</code></td>
+<td><strong>SellerOptions</strong>
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:SalesChannelDropList /&gt;</code></td>
+<td><strong>Lista de SalesChannels</strong>
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQVVT" /&gt;</code></td>
+<td><strong>Prateleira "Quem viu viu também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Viu_Viu_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQVCT" /&gt;</code></td>
+<td><strong>Prateleira "Quem viu comprou também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Viu_Comprou_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQCCT" /&gt;</code></td>
+<td><strong>Prateleira "Quem comprou comprou também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Comprou_Comprou_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Similares" /&gt;</code></td>
+<td><strong>Produtos Similares</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Produtos_Similares" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Acessorios" /&gt;</code></td>
+<td><strong>Acessórios</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Acessorios" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Sugestoes" /&gt;</code></td>
+<td><strong>Sugestões</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Sugestao" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:facebookLike /&gt;</code></td>
+<td><strong>Facebook Like</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h2>Controles para Páginas de Departamento, Categoria e Busca</h2>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;vtex.cmc:advancedSearchFilter/&gt;</code></td>
+<td><strong>Filtro de Busca Avançada</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:singleDepartmentNavigator/&gt;</code></td>
+<td><strong>Menu de Departamento</strong>
+Atributos da Tag:
+<strong>keepCurrentPath:</strong> Quando o atributo está setado para true significa que a exibição dos produtos devem acontecer na página exibida.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchNavigator/&gt;</code></td>
+<td><strong>Menu/Filtro de Busca</strong>
+Os Departamentos e Categorias são apresentadas de acordo com o cadastro dos 1º e 2º nível e a configuração de apresentação no Menu. Para o Link “Lista Completa” também é necessário uma configuração nas Categorias Ativas do Departamento.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesCategoriesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Categorias</strong>
+É necessário que o cliente navegue pelas páginas dos produtos das diversas categorias para que a Categoria seja contabilizada.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchResult/&gt;</code></td>
+<td><strong>Resultado da busca de produtos</strong>
+Atributos da Tag:
+<strong>layout:</strong> Atributo obrigatório. Código do template da prateleira que exibirá o(s) produtos.
+<strong>itemCount:</strong> Atributo obrigatório. Quantidade de itens a serem apresentados.
+<strong>columnCount:</strong> Atributo obrigatório. Quantidade de colunas.
+<strong>showUnavailable:</strong> Quando o atributo está setado para true significa que devem ser exibidos os produtos esgotados.
+<strong>selectionMode="batch-buy":</strong> Atributo não obrigatório que permite a realização de compra em lote.
+<strong>isTrackable:</strong> Quando o atributo está setado para true significa que este controle deve ser rastreável.
+<strong>InternalCampaign:</strong> Nome da campanha interna.
+<strong>InternalPart:</strong> Nome da view part interna.
+<strong>Exemplo:</strong>
+<code>&lt;vtex.cmc:searchResult layout="48e223e6-da80-4610-b3d5-4e5cfaf94f13" itemCount="10" columnCount="4" /&gt;</code>
+Podem ser utilizados outros parâmetros como:
+isTrackable="true" InternalCampaign="Resultado busca landing" InternalPart="Resultado Busca"</td>
+</tr>
+</tbody>
+</table>
+<!--:--><!--:es--><h2>Controles para utilizar em qualquer página</h2>
+
+<p>Os controles que serão listados abaixo são compatíveis com quase todas as <strong>páginas</strong>. Alguns deles não funcionam em algumas páginas.</p>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="middle"><code>&lt;vtex.cmc:AmountItemsInCart /&gt;</code></td>
+<td><strong>Resumo do Carinho</strong><br />
+Exibe os totais de produtos inseridos no carrinho de compras. Ideal para ser usado no Header das lojas.<br />
+<a href="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-amount-1.png"><img src="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-amount-1.png" alt="controle-amount-1" width="251" height="71" class="alignnone size-full wp-image-44254" /></a><br />
+<a href="http://vtex.com.br/help/o-controle-de-resumo-do-carrinho-vtex-cmcamountitemsincart/" title="O controle de resumo do carrinho &lt;vtex.cmc:AmountItemsInCart /&gt;">ver artigo completo</a>
+
+</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:breadCrumb /&gt;</code></td>
+<td><strong>Bread Crumb</strong>
+Funciona apenas nas páginas de Produto, Departamento, Categoria e Busca.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:fullTextSearchBox/&gt;</code></td>
+   <td>
+      <strong>Busca Total</strong><br />
+<a href="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-busca.png"><img src="http://vtex.com.br/help/wp-content/uploads/2013/12/controle-busca-300x16.png" alt="controle-busca" width="300" height="16" class="alignnone size-medium wp-image-44143" /></a><br />
+      <a href="http://vtex.com.br/help/o-controle-de-busca-vtex-cmcfulltextsearchbox/" title="O Controle de Busca &lt;vtex.cmc:fullTextSearchBox /&gt;" />ver artigo completo</a>
+   </td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:navigationHistory/&gt;</code></td>
+<td><strong>Histórico de Navegação</strong>
+Exibe as últimas busca e últimos produtos vistos. Para ativar a funcionalidade de últimos produtos vistos, necessário adicionar esse controle na página de produto.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:storeFlagLocator/&gt;</code></td>
+<td><strong>Localizador de Lojas</strong>
+Requisitos: Cadastrar no ADMIN as Lojas Físicas e seus endereços. Além disso, pesquisar cada endereço no Google Maps e preencher os devidos campos.
+Necessário configurar no banco de conexão da Loja a chave do Google Maps adquirida pela Loja.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:welcomeMessage/&gt;</code></td>
+<td><strong>Mensagem de Boas Vindas</strong>
+No admin, na aba Configurações &gt; Textos, é possível alterar a frase de Bem vindo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:metaTags/&gt;</code></td>
+<td><strong>META TAGs</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:departmentLinks/&gt;</code></td>
+<td><strong>Links de Departamentos</strong>
+Apresenta o primeiro nível de categorias criado no Admin. Necessário configurar no Departamento que o mesmo será apresentado no Menu Superior.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:departmentNavigator/&gt;</code></td>
+<td><strong>Menu de Departamentos</strong>
+Os Departamentos e Categorias são apresentadas de acordo com o cadastro dos 1º e 2º Níveis. Para exibir o Link "Lista Completa", também é necessário uma configuração nas Categorias Ativas do Departamento.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:newsletterOptIn/&gt;</code></td>
+<td><strong>Newsletter</strong>
+Formulário para cadastro de uma lista de nome e e-mail cadastrado pelos Clientes.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Buscas</strong>
+É necessário inserir o controle de Histórico de Navegação na página de Busca para que o controle de Tag Cloud seja populada na Home.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesCategoriesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Categorias</strong>
+É necessário que o cliente navegue pelas páginas dos produtos das diversas categorias para que a Categoria seja contabilizada.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchTitle /&gt;</code></td>
+<td><strong>Título da Página</strong>
+Exibe o título das páginas de Departamento, Categoria e Busca.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductQueryStringReferenceShelf/&gt;</code></td>
+<td><strong>Produtos em destaque (Landing Page)</strong>
+Atributos da Tag:
+<strong>layout:</strong> ID do template da prateleira. Atributo obrigatório.
+<strong>itemCount:</strong> Quantidade de itens a serem apresentados. Atributo obrigatório.
+<strong>columnCount:</strong> Quantidade de colunas. Atributo obrigatório.
+<strong>showUnavailable:</strong> Quando o atributo está setado para true significa que deve exibir os produtos esgotados.
+<strong>selectionMode="batch-buy":</strong> Atributo não obrigatório que permite a realização de compra em lote.
+<strong>isTrackable:</strong> Quando o atributo está setado para true significa que este controle deve ser rastreável.
+<strong>InternalCampaign:</strong> Nome da campanha interna.
+<strong>InternalPart:</strong> Nome da view part interna.
+<strong>Exemplo de uso:</strong>
+<code>&lt;vtex.cmc:ProductQueryStringReferenceShelf layout="e2ed81f5-6241-4418-a47b-018d7482fcf0" itemCount="3" columnCount="3" showUnavailable="true" isTrackable="true" InternalCampaign="Destaque landing" InternalPart="Prateleira destaque" /&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productQuickView/&gt;</code></td>
+<td><strong>Espiar (QuickView)</strong>
+Controle deve ser adicionado antes do fechamento da tag <code>&lt;/body&gt;</code> do template de página de <strong>Quickview</strong>. Ele é fundamental para o carregamento dos arquivos necessários da página.</td>
+</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h2>Controles para Página de Produto</h2>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;vtex.cmc:productPageTitle /&gt;</code></td>
+<td><strong>Título do Produto</strong>
+<code>&lt;title&gt;&lt;vtex.cmc:productPageTitle /&gt;&lt;/title&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productName/&gt;</code></td>
+<td><strong>Nome do Produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:brandName/&gt;</code></td>
+<td><strong>Marca do produto com link</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductImage/&gt;</code></td>
+<td><strong>Imagem principal do produto com thumbs</strong>
+Na versão SmartCheckout, para ativar o zoom, é necessário adicionar o atributo "zoom" na tag
+Ex.:
+<code>&lt;vtex.cmc:ProductImage zoom="on"/&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productReference/&gt;</code></td>
+<td><strong>Cód. de Referência do Produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuReference/&gt;</code></td>
+<td><strong>Cód. de Referência do Sku</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuPrice/&gt;</code></td>
+<td>Preço <strong>de</strong>, Preço <strong>por</strong>, <strong>Parcelamento</strong> e <strong>Economia de</strong>
+ADMIN: Depende do cadastro dos preços de um determinado SKU. Por exemplo, se o preço novo cadastrado for menor do que o antigo, o "de/para" é mostrado, bem como a "economia de".</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitSelection /&gt;</code></td>
+<td><strong>Seleção de SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuRichSelection changeImage="1" /&gt;</code></td>
+<td><strong>Seleção de SKU Checkbox</strong>
+Força o modo de seleção para o tipo radio</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:skuSelection /&gt;</code></td>
+<td><strong>Seleção de SKUs</strong>
+Não força o modo de seleção, respeitando a configuração no admin (radio, checkbox, combo, etc.).
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:OtherPaymentMethod/&gt;</code></td>
+<td><strong>Ver outras formas de pagamento</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:Delivery/&gt;</code></td>
+<td><strong>Disponibilidade</strong>
+Tempo com cidade e estado default</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:shippingValue/&gt;</code></td>
+<td><strong>Calcular valor do frete e prazo de entrega</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitRewardValue/&gt;</code></td>
+<td><strong>Valor para Fidelidade</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitService/&gt;</code></td>
+<td><strong>Serviços do SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:BuyTogether/&gt;</code></td>
+<td><strong>Compre-Junto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductDescription/&gt;</code></td>
+<td><strong>Descrição do produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productDescriptionShort /&gt;</code></td>
+<td><strong>Descrição Curta do Produto</strong>
+OBS: Campo "Nome Complemento" do formulário de cadastro do produto</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:productSpecification/&gt;</code></td>
+<td><strong>Especificação do produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:stockKeepingUnitMeasures/&gt;</code></td>
+<td><strong>Dimensões reais do SKU</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:ProductTag/&gt;</code></td>
+<td><strong>Tags associadas</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:PageSearch/&gt;</code></td>
+<td><strong>Busca dentro da página de produto</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:BuyButton/&gt;</code></td>
+<td><strong>Botão Comprar</strong>
+Se o SKU estiver esgotado, exibirá o Avise-me se o mesmo estiver configurado no admin</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:evaluationRate/&gt;</code></td>
+<td><strong>Avaliações dos consumidores (estrelas)</strong>
+Retorna o total de classificações feitas pelos usuários</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:UserReview/&gt;</code></td>
+<td><strong>Avaliações e comentários</strong>
+Adiciona opção de avaliar e resultado das avaliações, formulário para comentar e visualização de comentários</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:giftListInsertSku/&gt;</code></td>
+<td><strong>Adicionar produto a uma lista</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:referAFriend/&gt;</code></td>
+<td><strong>Indique um amigo</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:discountHightLight/&gt;</code></td>
+<td><strong>Flags Destaques de Promoções</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:SellerOptions /&gt;</code></td>
+<td><strong>SellerOptions</strong>
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:SalesChannelDropList /&gt;</code></td>
+<td><strong>Lista de SalesChannels</strong>
+<em>Somente Versão SmartCheckout</em></td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQVVT" /&gt;</code></td>
+<td><strong>Prateleira "Quem viu viu também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Viu_Viu_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQVCT" /&gt;</code></td>
+<td><strong>Prateleira "Quem viu comprou também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Viu_Comprou_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="ColecaoQCCT" /&gt;</code></td>
+<td><strong>Prateleira "Quem comprou comprou também"</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Quem_Comprou_Comprou_Tambem" no campo Tipo.
+- Criar novo template de prateleira.
+- O pré-requisito deste controle é que se tenha na página do produto o controle navigationHistory.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Similares" /&gt;</code></td>
+<td><strong>Produtos Similares</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Produtos_Similares" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Acessorios" /&gt;</code></td>
+<td><strong>Acessórios</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Acessorios" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex:contentPlaceHolder id="Sugestoes" /&gt;</code></td>
+<td><strong>Sugestões</strong>
+No portal, adicionar um controle do tipo "Produtos Relacionados". Ao editar o elemento, selecionar "Sugestao" no campo Tipo.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:facebookLike /&gt;</code></td>
+<td><strong>Facebook Like</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h2>Controles para Páginas de Departamento, Categoria e Busca</h2>
+
+<table style="width: 835px">
+<thead>
+<tr>
+<th>Viewpart</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;vtex.cmc:advancedSearchFilter/&gt;</code></td>
+<td><strong>Filtro de Busca Avançada</strong></td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:singleDepartmentNavigator/&gt;</code></td>
+<td><strong>Menu de Departamento</strong>
+Atributos da Tag:
+<strong>keepCurrentPath:</strong> Quando o atributo está setado para true significa que a exibição dos produtos devem acontecer na página exibida.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchNavigator/&gt;</code></td>
+<td><strong>Menu/Filtro de Busca</strong>
+Os Departamentos e Categorias são apresentadas de acordo com o cadastro dos 1º e 2º nível e a configuração de apresentação no Menu. Para o Link “Lista Completa” também é necessário uma configuração nas Categorias Ativas do Departamento.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:latestSearchesCategoriesTagCloud/&gt;</code></td>
+<td><strong>Tag Cloud - Últimas Categorias</strong>
+É necessário que o cliente navegue pelas páginas dos produtos das diversas categorias para que a Categoria seja contabilizada.</td>
+</tr>
+<tr>
+<td><code>&lt;vtex.cmc:searchResult/&gt;</code></td>
+<td><strong>Resultado da busca de produtos</strong>
+Atributos da Tag:
+<strong>layout:</strong> Atributo obrigatório. Código do template da prateleira que exibirá o(s) produtos.
+<strong>itemCount:</strong> Atributo obrigatório. Quantidade de itens a serem apresentados.
+<strong>columnCount:</strong> Atributo obrigatório. Quantidade de colunas.
+<strong>showUnavailable:</strong> Quando o atributo está setado para true significa que devem ser exibidos os produtos esgotados.
+<strong>selectionMode="batch-buy":</strong> Atributo não obrigatório que permite a realização de compra em lote.
+<strong>isTrackable:</strong> Quando o atributo está setado para true significa que este controle deve ser rastreável.
+<strong>InternalCampaign:</strong> Nome da campanha interna.
+<strong>InternalPart:</strong> Nome da view part interna.
+<strong>Exemplo:</strong>
+<code>&lt;vtex.cmc:searchResult layout="48e223e6-da80-4610-b3d5-4e5cfaf94f13" itemCount="10" columnCount="4" /&gt;</code>
+Podem ser utilizados outros parâmetros como:
+isTrackable="true" InternalCampaign="Resultado busca landing" InternalPart="Resultado Busca"</td>
+</tr>
+</tbody>
+</table>
+<!--:-->
